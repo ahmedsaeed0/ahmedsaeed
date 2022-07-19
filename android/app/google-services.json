@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "327236087610",
+    "project_id": "ahmed-store-a3ee2",
+    "storage_bucket": "ahmed-store-a3ee2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327236087610:android:038c2299197b4e4be3ea03",
+        "android_client_info": {
+          "package_name": "com.example.test3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327236087610-eiu7oqi1c7nmd1dhoedtks6o71lkthv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM_bz2jgXmUHs4Wqlrd16fPkU9z7EjcLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327236087610-eiu7oqi1c7nmd1dhoedtks6o71lkthv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

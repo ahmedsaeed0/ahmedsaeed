@@ -18,17 +18,17 @@ class Body extends StatefulWidget {
   State<Body> createState() => _BodyState();
 }
 
-int cont =0;
-class _BodyState extends State<Body> {
+int cont = 1;
 
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    var ahmed =  widget.product.id;
-    final Cart a= new Cart(product: demoProducts[ahmed], numOfItem: 4);
+    var ahmed = widget.product.id;
+    // final Cart a = new Cart(product: demoProducts[ahmed], numOfItem: 4);
 
-    add( Cart demoCarts) {
-      demoCarts.add(Cart(product: demoProducts[ahmed], numOfItem: 0));
-    }
+    // add( Cart demoCarts) {
+    //   demoCarts.add(Cart(product: demoProducts[ahmed], numOfItem: 0));
+    // }
 
     return ListView(
       children: [
@@ -45,46 +45,46 @@ class _BodyState extends State<Body> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: kPrimaryColor),
-                        child: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              cont++;
-                              print('$cont');
-                            });
-
-
-                          },
-                          icon:Icon(Icons.add,color: Colors.white,)
-                        ),
-                      ),
-                      Text('$cont',style: TextStyle(fontSize: 20.0)),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: kPrimaryColor),
-                        child: IconButton(
-                            onPressed: () {
-                              setState(() {
-
-                                if (cont>0){
-                                  cont--;
-
-                                }else
-                                  cont=0;
-                                print('$cont');
-                              });
-
-
-                            },
-                            icon:Icon(Icons.minimize,color: Colors.white,)
-                        ),
-                      ),
-                    ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: kPrimaryColor),
+                            child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    cont++;
+                                    print('$cont');
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                )),
+                          ),
+                          Text('$cont', style: TextStyle(fontSize: 20.0)),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: kPrimaryColor),
+                            child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (cont > 0) {
+                                      cont--;
+                                    } else
+                                      cont = 0;
+                                    print('$cont');
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.minimize,
+                                  color: Colors.white,
+                                )),
+                          ),
+                        ]),
                     Column(
                       children: [
                         TopRoundedContainer(
@@ -102,7 +102,8 @@ class _BodyState extends State<Body> {
                                   context,
                                   CartScreen.routeName,
                                   arguments: Cart(product: demoProducts[ahmed], numOfItem: cont));
-                                print(ahmed);
+                                print("add to cart");
+                                CartModel().addItemToCart(widget.product, cont);
 
                                 //);
                               },
@@ -121,4 +122,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-

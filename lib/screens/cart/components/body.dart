@@ -5,7 +5,7 @@ import 'package:shop_app/models/Cart.dart';
 import '../../../size_config.dart';
 import 'cart_card.dart';
 
-class    Body extends StatefulWidget {
+class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
 }
@@ -14,7 +14,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     // var cartt=ModalRoute.of(context)!.settings.arguments as Cart;
-     //print(cartt.toString());
+    //print(cartt.toString());
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
@@ -27,8 +27,7 @@ class _BodyState extends State<Body> {
             direction: DismissDirection.endToStart,
             onDismissed: (direction) {
               setState(() {
-
-                demoCarts.removeAt(index);
+                CartModel().removeItem(index);
               });
             },
             background: Container(
